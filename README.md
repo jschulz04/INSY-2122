@@ -8,7 +8,3 @@ Wir werden hier im Laufe des Semesters folgende Skripte hinzufügen:
 * SQL-DML-Skripte
 * jede Menge Abfragen
 * Docker-Files
-
-## eine kleinere Überschrift
-
-Das ist **besonders** wichtig (*Zitat: LISE0*)!
