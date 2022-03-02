@@ -1,4 +1,5 @@
---Übungsaufgabe SQL Johannes Schulz 02.03.2022
+--Übungsaufgabe SQL 
+--Autor Johannes Schulz, 02.03.2022
 
 --Erstellt die Tabelle auto
 CREATE DATABASE autos;
@@ -23,7 +24,7 @@ CREATE TABLE auto(
 ALTER TABLE typ
 ADD neupreis FLOAT;
 
---Ändert den Datentyp von Typ;
+--Ändert den Datentyp von neupreis in Typ;
 ALTER TABLE typ
 MODIFY COLUMN neupreis
 INT;
@@ -36,6 +37,7 @@ DROP COLUMN neupreis;
 TRUNCATE TABLE auto;
 
 --Löscht die Tabelle Typ
+--Auto muss vorher geläscht werden da Auto auf Typ referenziert
 DROP TABLE auto;
 DROP TABLE typ;
 
