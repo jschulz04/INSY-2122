@@ -1,18 +1,34 @@
 SHOW DATABASES;
---Erstellt die Datenbank Kino
 
+--Erstellt die Datenbank Kino
 CREATE DATABASE kino; 
 
 --Kino auswählen
 USE kino;
 
---Tabelle Erstellen
+--Tabellen Erstellen
 CREATE TABLE film(
     titel VARCHAR(100),
     jahr INT,
     untertitel VARCHAR(250),
     land CHAR(2),
     PRIMARY KEY (titel, jahr)
+);
+
+CREATE TABLE person(
+    id INT PRIMARY KEY,
+    kuenstlername VARCHAR(250),
+    nachname VARCHAR(250),
+    herkunftsland CHAR(2),
+    kundennr INT,
+    geburtsdatum INT
+
+);
+
+CREATE TABLE land(
+    code CHAR(2) PRIMARY KEY,
+    name VARCHAR(250)
+
 );
 
 --Warnung Zeigen
