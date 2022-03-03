@@ -11,9 +11,6 @@
 @echo off
 
 :: Container erzeugen und Volumes verbinden
-docker run --name mysqlserver3xHIT -v ~/daten3c/data:/var/lib/mysql -v ~/daten3c/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=geheim -d mysql
+docker run --name mysql-3c -v ~/daten3c/data:/var/lib/mysql -v ~/daten3c/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=geheim -d mysql
 
-:: im Container den Befehl "mysql -p" ausführen
-:: damit wird die MySQL Client Kommandozeile 
-:: mit dem User root aufgerufen und nach einem Passwort gefragt
-docker exec -it mysqlserver3xHIT mysql -p
+docker exec -it mysql-3c mysql -p
