@@ -1,17 +1,17 @@
 SHOW DATABASES;
 
---Erstellt die Datenbank Kino
+-- Erstellt die Datenbank Kino
 
 -- Für Testskripte
 DROP DATABASE IF EXISTS kino 
 CREATE DATABASE kino; 
---Für Produktivsysteme
+-- Für Produktivsysteme
 CREATE DATABASE IF NOT EXISTS kino;
 
---Kino auswählen
+-- Kino auswählen
 USE kino;
 
---Tabellen Erstellen
+-- Tabellen Erstellen
 CREATE TABLE film(
     titel VARCHAR(100),
     jahr INT,
@@ -36,10 +36,10 @@ CREATE TABLE land(
 
 );
 
---Warnung Zeigen
+-- Warnung Zeigen
 SHOW WARNINGS;
 
 
---Tabelle löschen
+-- Tabelle löschen
 DROP TABLE film;
 
