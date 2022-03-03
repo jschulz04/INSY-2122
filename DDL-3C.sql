@@ -1,7 +1,12 @@
 SHOW DATABASES;
 
 --Erstellt die Datenbank Kino
+
+-- Für Testskripte
+DROP DATABASE IF EXISTS kino 
 CREATE DATABASE kino; 
+--Für Produktivsysteme
+CREATE DATABASE IF NOT EXISTS kino;
 
 --Kino auswählen
 USE kino;
