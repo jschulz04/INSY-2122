@@ -29,10 +29,5 @@ INSERT INTO gast (name) VALUES ('Neumann');
 DELETE FROM gast WHERE gastnr >= 4;
 
 -- Im Datensatz 2 wird der Name aktualisiert
-UPDATE gast SET name='Mueller', strasse="Hauptstrasse" WHERE gastnr = 3;
-
-
-
-
-
+UPDATE gast SET name='Mueller', strasse="Hauptstrasse 2" WHERE gastnr = 3;
 
