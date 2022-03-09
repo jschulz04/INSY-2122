@@ -15,12 +15,33 @@ CREATE TABLE gast (
     PRIMARY KEY (gastnr)
 );
 
+-- Erstellt die Tabelle mit den benötigten Spalten
+CREATE TABLE speiseart (
+    code INT PRIMARY KEY,
+    speiseart VARCHAR(50)
+);
+
+-- Erstellt die Tabelle mit den benötigten Spalten
+CREATE TABLE speise (
+    speisenr INT AUTO_INCREMENT PRIMARY KEY,
+    bezeichnung VARCHAR(50),
+    speisecode INT REFERENCES speiseart(code),
+    preis FLOAT,
+    FOREIGN KEY (speisecode) REFERENCES speiseart(code)
+);
+
+INSERT INTO speiseart VALUES (1, "Vorspeise");
+INSERT INTO speise VALUES (DEFAULT, "California Rolls 8 Stk.", 1, 8);
+
+SELECT * FROM speise;
+SELECT * FROM speiseart WHERE code = 1;
+
+
 -- Befüllt die Tabelle mit Inhalt
-DESCRIBE gast;
 INSERT INTO gast (gastnr, name, strasse, plz, ort) VALUES (1,"Meier", "Wexstrasse 187", 1160, "Wien");
 INSERT INTO gast (gastnr, name, strasse, plz, ort) VALUES (DEFAULT, "Huber", "Wexstrasse 187", 1160, "Wien");
 INSERT INTO gast (gastnr, plz, ort) VALUES (DEFAULT, DEFAULT, DEFAULT);
-
+DESCRIBE gast;
 
 -- Alle anderen Datensätze werden auf null gesetzt
 INSERT INTO gast (name) VALUES ('Neumann');
