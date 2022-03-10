@@ -28,10 +28,16 @@ CREATE TABLE speise (
     speisecode INT REFERENCES speiseart(code),
     preis FLOAT,
     FOREIGN KEY (speisecode) REFERENCES speiseart(code)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
-INSERT INTO speiseart VALUES (1, "Vorspeise");
-INSERT INTO speise VALUES (DEFAULT, "California Rolls 8 Stk.", 1, 8);
+INSERT INTO speiseart VALUES (1, "Vorspeise"),
+    (2, "Hauptspeise"),
+    (3, "Dessert");
+INSERT INTO speise VALUES (DEFAULT, "California Rolls 8 Stk.", 1, 8.99),
+    (DEFAULT, "Sushi 6 Stk.", 1, 4.99),
+    (DEFAULT, "Sushi 12 Stk.", 1, 8.99);
 
 SELECT * FROM speise;
 SELECT * FROM speiseart WHERE code = 1;
@@ -52,3 +58,4 @@ DELETE FROM gast WHERE gastnr >= 4;
 -- Im Datensatz 2 wird der Name aktualisiert
 UPDATE gast SET name='Mueller', strasse="Hauptstrasse 2" WHERE gastnr = 3;
 
+UPDATE speise SET speisecode = 2 WHERE speisenr>=2;
